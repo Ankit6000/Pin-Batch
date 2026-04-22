@@ -1,0 +1,17 @@
+{
+  "name": "Pin Batch",
+  "short_name": "Pin Batch",
+  "description": "Select many photos and publish them as individual Pinterest Pins in one guided batch.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6efe7",
+  "theme_color": "#be123c",
+  "icons": [
+    {
+      "src": "/icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
