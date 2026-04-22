@@ -188,7 +188,9 @@ function App() {
   return (
     <main className="app-shell">
       <section className="command-band">
-        <div className="brand-mark">PB</div>
+        <div className="brand-mark" aria-hidden="true">
+          <span />
+        </div>
         <div>
           <p className="eyebrow">Pinterest batch publisher</p>
           <h1>Turn a folder of photos into a clean run of individual Pins.</h1>
@@ -357,7 +359,9 @@ function PrivacyPage() {
   return (
     <main className="app-shell policy-shell">
       <section className="policy-header">
-        <div className="brand-mark">PB</div>
+        <div className="brand-mark" aria-hidden="true">
+          <span />
+        </div>
         <div>
           <p className="eyebrow">Privacy policy</p>
           <h1>Pin Batch</h1>

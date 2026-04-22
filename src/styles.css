@@ -59,14 +59,38 @@ button {
   width: 78px;
   height: 78px;
   border-radius: 20px;
-  display: grid;
-  place-items: center;
-  color: #fff7ed;
-  background: var(--rose);
-  font-family: Georgia, serif;
-  font-size: 25px;
-  font-weight: 700;
+  position: relative;
+  background: var(--blue);
   box-shadow: 9px 9px 0 #d7c3b2;
+}
+
+.brand-mark::before,
+.brand-mark::after,
+.brand-mark span {
+  content: "";
+  position: absolute;
+  border-radius: 7px;
+}
+
+.brand-mark::before {
+  inset: 20px 24px 16px 18px;
+  background: rgba(255, 247, 237, 0.46);
+}
+
+.brand-mark::after {
+  inset: 14px 14px 22px 26px;
+  background: #fff7ed;
+}
+
+.brand-mark span {
+  left: 37px;
+  top: 26px;
+  width: 18px;
+  height: 26px;
+  border-left: 5px solid var(--blue);
+  border-bottom: 5px solid var(--blue);
+  transform: rotate(-45deg);
+  z-index: 1;
 }
 
 .eyebrow,
