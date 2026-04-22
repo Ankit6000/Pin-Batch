@@ -13,6 +13,12 @@
   },
   "dependencies": {
     "@vitejs/plugin-react": "^5.1.1",
+    "@types/express": "^5.0.6",
+    "@types/express-session": "^1.18.2",
+    "@types/multer": "^2.0.0",
+    "@types/node": "^25.0.3",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
     "concurrently": "^9.2.1",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
@@ -24,13 +30,5 @@
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "vite": "^7.3.0"
-  },
-  "devDependencies": {
-    "@types/express": "^5.0.6",
-    "@types/express-session": "^1.18.2",
-    "@types/multer": "^2.0.0",
-    "@types/node": "^25.0.3",
-    "@types/react": "^19.2.7",
-    "@types/react-dom": "^19.2.3"
   }
 }
