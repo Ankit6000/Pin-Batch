@@ -1,5 +1,5 @@
-const CACHE_NAME = 'pin-batch-v1';
-const APP_SHELL = ['/', '/manifest.webmanifest', '/icons/icon.svg'];
+const CACHE_NAME = 'pin-batch-v2';
+const APP_SHELL = ['/manifest.webmanifest', '/icons/upload-stack.svg'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE_NAME).then((cache) => cache.addAll(APP_SHELL)));
@@ -19,15 +19,22 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
   if (url.pathname.startsWith('/api') || event.request.method !== 'GET') return;
 
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put('/', copy));
+          return response;
+        })
+        .catch(() => caches.match('/'))
+    );
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then((cached) => {
-      return (
-        cached ||
-        fetch(event.request).catch(() => {
-          if (event.request.mode === 'navigate') return caches.match('/');
-          return undefined;
-        })
-      );
+      return cached || fetch(event.request);
     })
   );
 });
